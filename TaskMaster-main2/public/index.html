@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management Schedule</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-light yellow flex justify-left items-center h-screen">
+  <div class="w-full max-w-md p-4 bg-purple-50 shadow-md rounded-lg">
+    <h1 class="text-2xl font-bold text-purple-400 text-center mb-4">Task-Manager</h1>
+    
+    <!--Search and Task Filtering  -->
+    <div class="mb-4">
+      <input 
+        type="text" 
+        id="searchBar" 
+        class="w-full p-2 border border-purple-400 rounded mb-2" 
+        placeholder="Search by title or description"
+      />
+      <select 
+        id="Priorityfilter" 
+        class="w-full p-2 border border-purple-500 rounded mb-2">
+        <option value="">Priorities</option>
+        <option value="low">Low Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="high">High Priority</option>
+      </select>
+      <input 
+        type="date" 
+        id="filterDeadline" 
+        class="w-full p-2 border border-purple-400 rounded mb-2" 
+        placeholder="Filter by Deadline"
+      />
+    </div>
+
+    <!-- Add Task Form -->
+    <div class="mb-4">
+      <input 
+        type="text" 
+        id="task-Title" 
+        class="w-full p-2 border border-purple-400 rounded mb-2" 
+        placeholder="Task Title"/>
+      <textarea 
+        id="task-Description" 
+        class="w-full p-2 border border-purple-400 rounded mb-2" 
+        placeholder="Task-Description"
+      ></textarea>
+      <select 
+        id="taskPriority" 
+        class="w-full p-2 border border-purple-500 rounded mb-2">
+        <option value="low">Low Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="high">High Priority</option>
+      </select>
+      <input 
+        type="date" 
+        id="taskDeadline" 
+        class="w-full p-2 border border-purple-500 rounded mb-2" 
+        placeholder="Deadline" 
+      />
+      <select 
+        id="task level" 
+        class="w-full p-2 border border-purple-500 rounded mb-2">
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+      <button 
+        id="addTaskBtn" 
+        class="mt-2 w-full bg-purple-600 text-white py-2 rounded hover:bg-pink-600">
+        Add Task
+      </button>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList" class="space-y-2">
+      <!-- Tasks will be dynamically added here -->
+    </ul>
+
+    <!-- Logout Button -->
+    <button id="logoutBtn" class="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-red-600">
+      Logout
+    </button>
+  </div>
+  
+  <script type="module" src="./app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
